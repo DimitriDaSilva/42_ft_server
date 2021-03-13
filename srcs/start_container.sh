@@ -6,7 +6,7 @@
 #    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/12 20:45:39 by dda-silv          #+#    #+#              #
-#    Updated: 2021/03/12 22:17:38 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/03/13 10:22:49 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,28 @@ echo "FLUSH PRIVILEGES;" | mysql -u root
 
 # PhpMyAdmin setup
 
-mkdir /var/www/localhost/phpMyAdmin
+mkdir /var/www/localhost/phpmyadmin
 wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.gz
-tar -xvf phpMyAdmin-5.1.0-all-languages.tar.gz --
 
+## --strip-components=1 is for removing one level of the file tree structure /a/b/c/files -> /b/c/files
+## -C <destination>
+tar -zxf phpMyAdmin-5.1.0-all-languages.tar.gz --strip-components=1 -C /var/www/localhost/phpmyadmin
 
+## Moving our modified config php file from the srcs
+mv ./config.inc.php /var/www/localhost/phpmyadmin
+
+# WordPress setup
+
+## Following this guide: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10
+
+mdkir /var/www/localhost/wordpress
+wget http://wordpress.org/latest.tar.gz
+tar -zxf latest.tar.gz -C /var/www/localhost/wordpress
+mv ./wp-config.php /var/www/localhost/wordpres
+
+## Installing new php extensions used by WordPress
+apt-get -y install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
+
+# Finally, start php and nginx
+service php7.3-fpm start
 service nginx start
