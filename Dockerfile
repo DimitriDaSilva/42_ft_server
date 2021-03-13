@@ -6,7 +6,7 @@
 #    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 14:28:54 by dda-silv          #+#    #+#              #
-#    Updated: 2021/03/12 21:59:20 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/03/13 19:20:59 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ FROM debian:buster
 RUN apt-get update
 
 # Install services required by the project
+RUN apt-get -y install php7.3-fpm php7.3-common php7.3-mysql php7.3-gmp php7.3-curl php7.3-intl php7.3-mbstring php7.3-xmlrpc php7.3-gd php7.3-xml php7.3-cli php7.3-zip php7.3-soap php7.3-imap
 RUN apt-get -y install mariadb-server \ 
 			php \
 			php-cli \
@@ -33,7 +34,7 @@ RUN apt-get -y install mariadb-server \
 			openssl
 
 # Install auxiliary tools
-RUN apt-get -y install wget libnss3-tools
+RUN apt-get -y install vim wget libnss3-tools
 
 
 # Copy srcs files over to our container and make it our work directory
