@@ -6,7 +6,7 @@
 #    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/12 20:45:39 by dda-silv          #+#    #+#              #
-#    Updated: 2021/03/13 10:22:49 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/03/13 15:29:25 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ mv ./config.inc.php /var/www/localhost/phpmyadmin
 
 ## Following this guide: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10
 
-mdkir /var/www/localhost/wordpress
+mkdir /var/www/localhost/wordpress
 wget http://wordpress.org/latest.tar.gz
 tar -zxf latest.tar.gz -C /var/www/localhost/wordpress
 mv ./wp-config.php /var/www/localhost/wordpres
