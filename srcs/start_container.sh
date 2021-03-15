@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    start_container.sh                                 :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/12 20:45:39 by dda-silv          #+#    #+#              #
-#    Updated: 2021/03/13 19:27:20 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/03/15 10:38:48 by dds              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ apt-get -y install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xm
 wget -O wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp
 mv wp /usr/local/bin/
-wp core install --allow-root --url=localhost/wordpress --path=/var/www/localhost/wordpress/ --title="Hello world!" --admin_name=admin --admin_password=password --admin_email=admin@admin.com
+wp core install --allow-root --url=localhost/wordpress --path=/var/www/localhost/wordpress/ --title="ft_server" --admin_name=admin --admin_password=password --admin_email=admin@admin.com
 
 # Finally, start php and nginx
 service php7.3-fpm start
