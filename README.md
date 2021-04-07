@@ -1,4 +1,5 @@
 # 42Lisboa_ft_server
+This project challenges us to setup a webserver with Nginx running WordPress, PhyMyAdmin and a SQL database (LEMP stack) using Docker. 
 
 # Resources
 - Best starting point for Docker: https://www.youtube.com/watch?v=eGz9DS-aIeY
